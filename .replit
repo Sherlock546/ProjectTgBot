@@ -1,0 +1,2 @@
+language = "csharp"
+run = "dotnet run --project TelegramBot.csproj --urls=http://0.0.0.0:8080"
