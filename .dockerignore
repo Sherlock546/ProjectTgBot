@@ -1,0 +1,11 @@
+**/.git
+**/.gitignore
+**/.vs
+**/bin
+**/obj
+**/.dockerignore
+**/Dockerfile
+*.user
+*.suo
+.env
+**/.gitattributes
