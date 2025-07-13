@@ -4,7 +4,7 @@ WORKDIR /src
 
 # Копируем файлы решения и проекта
 COPY ProjectTgBot.sln .
-COPY TgBot/TelegramBot.csproj ./TgBot/
+COPY TgBot/TgBot.csproj ./TgBot/
 RUN dotnet restore
 
 # Копируем весь код
