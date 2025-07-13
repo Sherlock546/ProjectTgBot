@@ -3,15 +3,15 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
 # Копируем файлы решения и проекта
-COPY ProjectTelegramBot.sln .
-COPY TelegramBot/TelegramBot.csproj ./TelegramBot/
+COPY ProjectTgBot.sln .
+COPY TgBot/TelegramBot.csproj ./TgBot/
 RUN dotnet restore
 
 # Копируем весь код
 COPY . .
 
 # Собираем приложение
-WORKDIR /src/TelegramBot
+WORKDIR /src/TgBot
 RUN dotnet publish -c Release -o /app/publish
 
 # Этап запуска
@@ -23,4 +23,4 @@ COPY --from=build /app/publish .
 ENV BotToken="8146875897:AAHq9t1i2YIf6wq1MX-jCCskA4SW2Y8GMkQ"
 
 # Запускаем бота
-ENTRYPOINT ["dotnet", "TelegramBot.dll"]
+ENTRYPOINT ["dotnet", "TgBot.dll"]
